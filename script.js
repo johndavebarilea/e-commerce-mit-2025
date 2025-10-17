@@ -1,1 +1,52 @@
-/* Global Styles */body {    margin: 0;    padding: 0;    font-family: 'Orbitron', sans-serif; /* Sleek techno font */    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Techno gradient background */    color: #fff; /* White text for contrast */    height: 100vh; /* Full viewport height */    overflow: hidden; /* Prevent scrolling */    display: flex;    flex-direction: column;    align-items: center;}header {    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for a sleek look */    padding: 20px;    width: 100%;    text-align: center;    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3); /* Neon glow effect */}.brand {    font-size: 2.5em;    color: #00ffff; /* Cyan neon color */    text-shadow: 0 0 10px #00ffff; /* Glow effect */}.subtitle {    font-size: 1.2em;    color: #ff00ff; /* Magenta neon color */    margin-bottom: 10px;}nav {    display: flex;    justify-content: center;}.desktop-menu {    list-style: none;    display: flex;    padding: 0;    margin: 0;}.desktop-menu li {    margin: 0 15px;}.desktop-menu a {    color: #fff;    text-decoration: none;    font-size: 1.1em;    transition: color 0.3s;}.desktop-menu a:hover {    color: #00ffff; /* Neon hover effect */}.mobile-menu-icon {    display: none; /* Hidden by default, shown on mobile */    font-size: 1.5em;    color: #fff;    cursor: pointer;    position: absolute;    top: 20px;    right: 20px;}.mobile-menu {    display: none; /* Hidden by default */    position: fixed;    top: 0;    right: -250px; /* Off-screen by default */    width: 250px;    height: 100%;    background: rgba(0, 0, 0, 0.9);    list-style: none;    padding: 60px 20px 20px;    margin: 0;    transition: right 0.3s ease-in-out; /* Smooth slide */    z-index: 1000;}.mobile-menu.active {    right: 0; /* Slide in from the right */}.mobile-menu li {    margin: 15px 0;}.mobile-menu a {    color: #fff;    text-decoration: none;    font-size: 1.1em;    display: block;}.mobile-menu a:hover {    color: #00ffff;}main {    flex: 1; /* Take up available space */    width: 100%;    padding: 20px;    overflow: hidden; /* Ensure no scrolling */    display: flex;    justify-content: center;    align-items: center;}.products-section {    text-align: center;}.products-section h2 {    color: #ff00ff; /* Neon heading */    text-shadow: 0 0 8px #ff00ff;}.product-grid {    display: flex;    justify-content: center;    flex-wrap: wrap;    gap: 20px;    margin-top: 20px;}.product-card {    background: rgba(255, 255, 255, 0.1); /* Semi-transparent for techno feel */    border: 1px solid #00ffff;    border-radius: 10px;    padding: 20px;    width: 250px;    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); /* Neon shadow */    transition: transform 0.3s;}.product-card:hover {    transform: scale(1.05); /* Slight zoom on hover */}.product-card h3 {    color: #00ffff;}.product-card button {    background: #ff00ff;    border: none;    color: #fff;    padding: 10px 20px;    cursor: pointer;    border-radius: 5px;    transition: background 0.3s;}.product-card button:hover {    background: #00ffff;}footer {    background: rgba(0, 0, 0, 0.8);    padding: 10px;    width: 100%;    text-align: center;    font-size: 0.8em;    color: #fff;    position: absolute;    bottom: 0;}/* Media Queries for Responsiveness */@media (max-width: 768px) {    .desktop-menu {        display: none; /* Hide desktop menu on mobile */    }        .mobile-menu-icon {        display: block; /* Show hamburger icon */    }        .product-grid {        flex-direction: column; /* Stack products vertically on mobile */    }        main {        padding: 10px; /* Reduce padding for mobile */    }        .product-card {        width: 80%; /* Full width on mobile */        margin: 0 auto; /* Center align */    }}
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.querySelector('.mobile-menu-icon');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const closeMenuButton = document.querySelector('#close-menu');
+    const menuAboutDesktop = document.querySelector('#menu-about');  // For desktop
+    const menuAboutMobile = document.querySelector('#mobile-menu-about');  // For mobile
+    const mainContent = document.querySelector('#main-content');
+    const aboutSection = document.querySelector('#about-section');
+    const backToHomeButton = document.querySelector('#back-to-home');
+    
+    if (menuIcon && mobileMenu && closeMenuButton && menuAboutDesktop && menuAboutMobile && mainContent && aboutSection && backToHomeButton) {
+        // Existing: Toggle mobile menu
+        menuIcon.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        closeMenuButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            mobileMenu.classList.remove('active');
+        });
+        
+        document.addEventListener('click', function(event) {
+            if (mobileMenu.classList.contains('active')) {
+                if (!mobileMenu.contains(event.target) && !menuIcon.contains(event.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            }
+        });
+        
+        // New: Handle About link clicks
+        menuAboutDesktop.addEventListener('click', function(event) {
+            event.preventDefault();  // Prevent default link behavior
+            mainContent.style.display = 'none';  // Hide main content
+            aboutSection.style.display = 'block';  // Show About section
+        });
+        
+        menuAboutMobile.addEventListener('click', function(event) {
+            event.preventDefault();
+            mobileMenu.classList.remove('active');  // Close mobile menu first
+            mainContent.style.display = 'none';
+            aboutSection.style.display = 'block';
+        });
+        
+        // New: Handle Back to Home button
+        backToHomeButton.addEventListener('click', function() {
+            aboutSection.style.display = 'none';  // Hide About section
+            mainContent.style.display = 'block';  // Show main content
+        });
+    } else {
+        console.error('One or more elements not found. Check your HTML.');
+    }
+});
