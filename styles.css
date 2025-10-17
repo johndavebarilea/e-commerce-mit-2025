@@ -1,0 +1,1 @@
+// JavaScript for collapsible mobile menudocument.querySelector('.mobile-menu-icon').addEventListener('click', function() {    document.querySelector('.mobile-menu').classList.toggle('active');});
