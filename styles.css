@@ -110,7 +110,7 @@ main {
     flex: 1;
     width: 100%;
     padding: 20px;
-    overflow: hidden;
+    overflow: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -220,34 +220,3 @@ footer {
     }
 }
 
-/* ... (keep your existing CSS) ... */
-
-.about-section {
-    display: none;  /* Hidden by default */
-    position: fixed;  /* Overlay on the page */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 2000;  /* Above other elements */
-    text-align: center;
-}
-
-.about-section img {
-    border-radius: 50%;  /* Circular image for a modern look */
-    margin-bottom: 10px;
-}
-
-#back-to-home {
-    background: #ff00ff;
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-/* ... (keep your existing media queries and other styles) ... */

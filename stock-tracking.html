@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD Parts - Stock Tracking</title>
+    <link rel="stylesheet" href="styles.css">  <!-- Link to your existing styles.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"> <!-- Techno font -->
+    <style>
+        /* Additional styles specific to this page */
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+        }
+        
+        main {
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+        }
+        
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #00ffff;
+        }
+        
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+        
+        button {
+            background: #ff00ff;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #00ffff;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                width: 95%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">JD Parts</div>
+        <div class="subtitle">E-COMMERCE SITE FOR COMPUTER PARTS</div>
+        <nav>
+            <ul class="desktop-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="add-item.html">Add Item</a></li>
+                <li><a href="index.html">Products</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Contact</a></li>
+                <li><a href="stock-tracking.html">Stock Tracking</a></li>  <!-- Current page link -->
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+    <section class="products-section">
+
+        <h2>Stock Tracking and Management</h2>
+        <p>Manage stock quantities for popular items like GPUs, CPUs, and integrate with suppliers for automated updates.</p>
+        
+        <h3>Update Stock Quantity</h3>
+        <form id="update-stock-form">
+            <label for="product-select">Select Product:</label>
+            <select id="product-select" name="product-select">
+                <option value="gpu">GPU (e.g., NVIDIA Model)</option>
+                <option value="cpu">CPU (e.g., Intel Core i7)</option>
+                <option value="ram">RAM (e.g., 16GB DDR4)</option>
+            </select>
+            
+            <label for="quantity">Current Quantity:</label>
+            <input type="number" id="quantity" name="quantity" placeholder="Enter current stock quantity">
+            
+            <label for="new-quantity">New Quantity:</label>
+            <input type="number" id="new-quantity" name="new-quantity" placeholder="Enter updated quantity">
+            
+            <img src="path/to/placeholder-product-image.jpg" alt="Placeholder for product image" width="200">  <!-- Replace with actual image path -->
+            <p>Example: Update stock for a popular GPU model.</p>
+            
+            <button type="submit">Update Stock</button>
+        </form>
+        
+        <h3>Supplier Integration Simulation</h3>
+        <form id="supplier-integration-form">
+            <label for="supplier-app">Select Supplier App (Shopify Integration):</label>
+            <select id="supplier-app" name="supplier-app">
+                <option value="shopify-app1">Shopify App: Oberlo (for dropshipping)</option>
+                <option value="shopify-app2">Shopify App: Inventory Source (for automation)</option>
+                <option value="shopify-app3">Custom Supplier Integration</option>
+            </select>
+            
+            <label for="supplier-details">Supplier Details (e.g., API Key or URL):</label>
+            <input type="text" id="supplier-details" name="supplier-details" placeholder="Enter supplier API key or URL">
+            
+            <label for="auto-update">Enable Automated Updates:</label>
+            <input type="checkbox" id="auto-update" name="auto-update">
+            <p>This would sync stock from suppliers like automated restocks for popular items.</p>
+            <img src="path/to/placeholder-supplier-logo.jpg" alt="Placeholder for supplier logo" width="200">  <!-- Replace with actual image -->
+            
+            <button type="submit">Simulate Integration</button>
+        </form>
+        
+        <p>Note: This is a sample. In a live setup, use Shopify's apps to automate inventory updates based on supplier data.</p>
+
+    </section>
+
+    </main>
+    
+    <footer>
+        <p>Developed by: JOHN DAVE A. BARILEA | Created 2025 | All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const updateStockForm = document.getElementById('update-stock-form');
+            const supplierIntegrationForm = document.getElementById('supplier-integration-form');
+            
+            if (updateStockForm) {
+                updateStockForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    alert('Stock updated successfully! (Simulation only; integrate with a backend for real changes.)');
+                    // In a real app, send data to Shopify API
+                });
+            }
+            
+            if (supplierIntegrationForm) {
+                supplierIntegrationForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    alert('Supplier integration simulated. Check Shopify dashboard for actual setup.');
+                    // In a real app, handle API calls to Shopify
+                });
+            }
+        });
+    </script>
+</body>
+</html>

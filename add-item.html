@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD Parts - Add Item</title>
+    <link rel="stylesheet" href="styles.css">  <!-- Link to your existing styles.css for consistency -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"> <!-- Techno font -->
+    <style>
+        /* Additional styles specific to this page */
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+        }
+        
+        main {
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+        }
+        
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        }
+        
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #00ffff;
+        }
+        
+        input, textarea, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+        
+        button {
+            background: #ff00ff;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #00ffff;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                width: 95%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">JD Parts</div>
+        <div class="subtitle">E-COMMERCE SITE FOR COMPUTER PARTS</div>
+        <nav>
+            <ul class="desktop-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Products</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Contact</a></li>
+                <li><a href="add-item.html">Add Item</a></li>  <!-- Link back to this page if needed -->
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+    <section class="products-section">
+        <h2>Add New Product</h2>
+        <p>Use this form to add products individually or upload a CSV for bulk import.</p>
+        
+        <h3>Individual Product Addition</h3>
+        <form id="add-product-form">
+            <label for="title">Product Title (e.g., GPU):</label>
+            <input type="text" id="title" name="title" required placeholder="Enter product title">
+            
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required placeholder="Enter product description"></textarea>
+            
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required placeholder="Enter price (e.g., 299.99)">
+            
+            <label for="image">Image URL or Upload (placeholder):</label>
+            <input type="file" id="image" name="image" accept="image/*" placeholder="Upload image file">  <!-- Placeholder for image upload -->
+            <h6>Use a placeholder like "path/to/gpu-image.jpg" or upload an actual image.</h6>
+            
+            <label for="variants">Variants (e.g., Model, Capacity, comma-separated):</label>
+            <textarea id="variants" name="variants" placeholder='e.g., "Model A, 8GB; Model B, 16GB"'></textarea>
+            
+            <button type="submit">Add Product</button>
+        </form>
+        
+        <h3>Bulk Product Addition via CSV</h3>
+        <form id="bulk-upload-form">
+            <label for="csv-file">Upload CSV File:</label>
+            <input type="file" id="csv-file" name="csv-file" accept=".csv" required>
+            <p>CSV Format: Each row should include columns for Title, Description, Price, Image URL, Variants (e.g., "GPU, High-performance card, 299.99, path/to/image.jpg, Model A,8GB")</p>
+            <button type="submit">Upload and Import CSV</button>
+        </form>
+    </section>
+    </main>
+    
+    <footer>
+        <p>Developed by: JOHN DAVE A. BARILEA | Created 2025 | All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addProductForm = document.getElementById('add-product-form');
+            const bulkUploadForm = document.getElementById('bulk-upload-form');
+            
+            if (addProductForm) {
+                addProductForm.addEventListener('submit', function(event) {
+                    event.preventDefault();  // Prevent actual submission
+                    alert('Product added successfully! (This is a simulation; set up a backend for real functionality.)');
+                    // In a real app, use FormData to send to a server
+                });
+            }
+            
+            if (bulkUploadForm) {
+                bulkUploadForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    alert('CSV uploaded successfully! (This is a simulation; process the file on a server.)');
+                    // In a real app, handle file upload and parse CSV
+                });
+            }
+        });
+    </script>
+</body>
+</html>

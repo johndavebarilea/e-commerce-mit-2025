@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD Parts - Payment Gateway Integration</title>
+    <link rel="stylesheet" href="styles.css">  <!-- Link to your existing styles.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"> <!-- Techno font -->
+    <style>
+        /* Additional styles specific to this page */
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+        }
+        
+        main {
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+        }
+        
+        section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            margin-bottom: 20px;
+        }
+        
+        form {
+            margin-top: 10px;
+        }
+        
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #00ffff;
+        }
+        
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+        
+        button {
+            background: #ff00ff;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #00ffff;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                width: 95%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">JD Parts</div>
+        <div class="subtitle">E-COMMERCE SITE FOR COMPUTER PARTS</div>
+        <nav>
+            <ul class="desktop-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="add-item.html">Add Item</a></li>
+                <li><a href="index.html">Products</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Contact</a></li>
+                <li><a href="stock-tracking.html">Stock Tracking</a></li>
+                <li><a href="payment-integration.html">Payment Integration</a></li>  <!-- Current page link -->
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+    <section class="products-section">
+        <h2>Payment Gateway Integration for JD Parts</h2>
+        <p>This page simulates integrating a payment gateway to enable secure transactions on your e-commerce site.</p>
+        
+        <section>
+            <h3>A. Choosing a Gateway</h3>
+            <p>Shopify supports options like Stripe, PayPal, and Shop Pay. For JD Parts, Stripe is recommended for its global reach and ease of use with tech products.</p>
+            <form id="choose-gateway-form">
+                <label for="gateway-select">Select Payment Gateway:</label>
+                <select id="gateway-select" name="gateway-select">
+                    <option value="stripe">Stripe</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="shop-pay">Shop Pay</option>
+                </select>
+                <button type="submit">Simulate Selection</button>
+            </form>
+            <img src="path/to/placeholder-gateway-image.jpg" alt="Placeholder for payment gateway diagram" width="300">  <!-- Replace with an image of a gateway setup -->
+        </section>
+        
+        <section>
+            <h3>B. Integration Steps</h3>
+            <p>In Shopify admin, go to Settings > Payments to connect a gateway. For Stripe, enter your API keys and configure payment methods.</p>
+            <form id="integration-steps-form">
+                <label for="api-key">Enter API Key (Simulation):</label>
+                <input type="text" id="api-key" name="api-key" placeholder="e.g., sk_live_123456">
+                <label for="payment-methods">Accepted Payment Methods (comma-separated):</label>
+                <input type="text" id="payment-methods" name="payment-methods" placeholder="e.g., Credit Card, Digital Wallet">
+                <button type="submit">Simulate Integration</button>
+            </form>
+        </section>
+        
+        <section>
+            <h3>C. Security and Compliance</h3>
+            <p>Ensure compliance with PCI DSS standards. Shopify handles this, but add fraud detection and SSL for extra security.</p>
+            <p>Simulation: This page assumes SSL is enabled; in a real setup, verify via your hosting provider.</p>
+            <img src="path/to/placeholder-security-image.jpg" alt="Placeholder for security compliance diagram" width="300">  <!-- Replace with a security flowchart image -->
+        </section>
+        
+        <section>
+            <h3>D. Customization</h3>
+            <p>Customize the checkout to match the techno theme, including branded elements and mobile testing.</p>
+            <p>Example: Add a custom checkout button style.</p>
+        </section>
+        
+        <section>
+            <h3>E. Testing and Go-Live</h3>
+            <p>Use Shopify's test mode for simulations, then monitor live transactions and offer support for issues.</p>
+            <form id="testing-form">
+                <label for="test-mode">Enable Test Mode (Simulation):</label>
+                <input type="checkbox" id="test-mode" name="test-mode">
+                <button type="submit">Simulate Go-Live</button>
+            </form>
+            <img src="path/to/placeholder-testing-image.jpg" alt="Placeholder for testing workflow" width="300">  <!-- Replace with a testing process image -->
+        </section>
+        
+        <p>Note: This is a sample for demonstration. For live integration, follow Shopify's guides and set up webhooks for real-time updates.</p>
+    </section>
+    </main>
+    
+    <footer>
+        <p>Developed by: JOHN DAVE A. BARILEA | Created 2025 | All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('form');  // Select all forms on the page
+            
+            forms.forEach(form => {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();  // Prevent actual submission
+                    alert('Action simulated successfully! Check Shopify dashboard for real integration.');
+                    // In a real app, this would trigger API calls
+                });
+            });
+        });
+    </script>
+</body>
+</html>

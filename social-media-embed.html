@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JD Parts - Social Media Embed</title>
+    <link rel="stylesheet" href="styles.css">  <!-- Link to your existing styles.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"> <!-- Techno font -->
+    <style>
+        /* Additional styles specific to this page */
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+        }
+        
+        main {
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+        }
+        
+        section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        button {
+            background: #ff00ff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        
+        button:hover {
+            background: #00ffff;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                width: 95%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">JD Parts</div>
+        <div class="subtitle">E-COMMERCE SITE FOR COMPUTER PARTS</div>
+        <nav>
+            <ul class="desktop-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="add-item.html">Add Item</a></li>
+                <li><a href="index.html">Products</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Contact</a></li>
+                <li><a href="stock-tracking.html">Stock Tracking</a></li>
+                <li><a href="payment-integration.html">Payment Integration</a></li>
+                <!--
+                <li><a href="marketing-promotion.html">Marketing & Promotion</a></li>
+                <li><a href="social-media-embed.html">Social Media</a></li>   Current page link 
+                -->
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+    <section class="products-section">
+        <div class="fb-post"
+            data-href="https://www.facebook.com/photo.php?fbid=10224452954311385&set=pb.1832543975.-2207520000&type=3"
+            data-width="500"></div>
+        <h2>Social Media Embed for JD Parts</h2>
+        <p>Connect and share content from your JD Parts social media accounts on Facebook, X, and Instagram. Below are embedded feeds and share buttons.</p>
+        
+        <section>
+            <h3>Facebook Embed</h3>
+            <p>Embed your JD Parts Facebook page to show updates and allow followers to engage.</p>
+            <!-- Replace with your actual Facebook embed code -->
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0" onload="FB.init({ xfbml: true, version: 'v17.0' });"></script>
+            <div class="fb-page" data-href="https://www.facebook.com/yourjdpartspage" data-tabs="timeline" data-width="500" data-height="300" data-small-header="false"></div>  <!-- Replace with your page URL -->
+            <button onclick="shareOnFacebook()">Share on Facebook</button>
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous"
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
+
+            <div class="fb-post"
+            data-href="https://www.facebook.com/photo.php?fbid=10220266714298001&set=pb.1832543975.-2207520000&type=3"
+            data-width="500"></div>
+            <img src="path/to/placeholder-fb-image.jpg" width="300">  <!-- Replace with a sample image -->
+        </section>
+        
+        <section>
+            <h3>X (Twitter) Embed</h3>
+            <p>Embed your JD Parts X timeline to display tweets and promote products.</p>
+            <!-- Replace with your actual X embed code -->
+            <a class="twitter-timeline" href="https://twitter.com/yourjdpartsx?ref_src=twsrc%5Etfw">Tweets by yourjdpartsx</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  <!-- Replace with your timeline URL -->
+            <button onclick="shareOnX()">Share on X</button>
+            <img src="path/to/placeholder-x-image.jpg" alt="Placeholder for X timeline" width="300">  <!-- Replace with a sample image -->
+        </section>
+        
+        <section>
+            <h3>Instagram Embed</h3>
+            <p>Embed your JD Parts Instagram feed to showcase product photos and stories.</p>
+            <!-- Replace with your actual Instagram embed code -->
+            <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/yourjdpartsinsta" data-instgrm-version="14"></blockquote>  <!-- Replace with your post or profile URL -->
+            <script async src="//www.instagram.com/embed.js"></script>
+            <button onclick="shareOnInstagram()">Share on Instagram</button>
+            <img src="path/to/placeholder-insta-image.jpg" alt="Placeholder for Instagram feed" width="300">  <!-- Replace with a sample image -->
+        </section>
+        
+        <p>Note: Replace the embed codes with your actual social media URLs and ensure scripts are loaded correctly. For share buttons, the JavaScript below simulates sharing.</p>
+    </section>
+    </main>
+    
+    <footer>
+        <p>Developed by: JOHN DAVE A. BARILEA | Created 2025 | All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function shareOnFacebook() {
+            alert('Simulating share on Facebook. In a real setup, use the Facebook Share Dialog.');
+            // Example: window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank');
+        }
+        
+        function shareOnX() {
+            alert('Simulating share on X. In a real setup, use the X Share intent.');
+            // Example: window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href), '_blank');
+        }
+        
+        function shareOnInstagram() {
+            alert('Simulating share on Instagram. Note: Direct sharing requires their API.');
+            // Instagram sharing is more complex and typically done via their app or API.
+        }
+    </script>
+</body>
+</html>
